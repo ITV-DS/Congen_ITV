@@ -7,12 +7,6 @@ main:
 
         
 pages:
-  - title: "GitPod"
-    children: 
-      - title: "- Como usar o GitPod"
-        url: /pages/logar_servidor/
-      - title: "- Configurando o ambiente"
-        url: /pages/config_ambiente/
     
   - title: Introdução à UNIX
     children:
@@ -35,12 +29,18 @@ pages:
 
   - title: Análises de Diversidade e Estrutura Populacional
     children:
-      - title: "- Estatísticas Sumárias de Diversidade (Heterozigosidade, π, dXY, Parentesco e Endogamia)"
+      - title: "- Estatísticas Sumárias de Diversidade (Heterozigosidade, π, dXY, Parentesco)"
         url: /pages/estatisticas_diversidade/
-      - title: "- Análises de Estruturação: PCA e Admixture"
-        url: /pages/estruturacao/
+      - title: "- Endocruzamento"
+        url: /pages/endocruzamento/        
+      - title: "- Análises de Estruturação: PCA "
+        url: /pages/PCA/
+      - title: "- Análises de Estruturação: Admixture "
+        url: /pages/admixture/
 
   - title: Análises demográficas
     children:
       - title: "- PMSC"
         url: /pages/tutorial_PMSC/
+      - title: "- GONE"
+        url: /pages/GONE/
