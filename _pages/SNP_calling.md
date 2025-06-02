@@ -112,7 +112,7 @@ Contém as variantes identificadas (SNPs e indels) em texto legível. Cada linha
 ### Vamos começar verificando se os arquivos fai e bai já existem.
 
 
-```python
+```
 # Vamos entrar na pasta do curso.
 from google.colab import drive
 drive.mount('/content/drive')
@@ -121,14 +121,14 @@ drive.mount('/content/drive')
 ```
 
 
-```python
+```
 # Vamos verificar se existe o arquivo .fai e o arquivo .bai
 !ls /content/drive/MyDrive/Congen_ITV/reference/
 !ls /content/drive/MyDrive/Congen_ITV/bams/
 ```
 
 
-```python
+```
 !conda run -n genomics_env samtools faidx /content/drive/MyDrive/Congen_ITV/reference/bWildVid.reduced.fasta
 ```
 
@@ -140,14 +140,14 @@ Vamos começar instalando o conda e os pacotes que vamos utilizar.
 
 
 
-```python
+```
 # Install Miniconda (1–2 min)
 !wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-!bash Miniconda3-latest-Linux-x86_64.sh -bfp /usr/local
+! Miniconda3-latest-Linux-x86_64.sh -bfp /usr/local
 
 # Add conda to the environment
 import sys
-sys.path.append('/usr/local/lib/python3.7/site-packages')
+sys.path.append('/usr/local/lib/3.7/site-packages')
 
 # Add Bioconda channels
 !conda config --add channels defaults
@@ -164,7 +164,7 @@ Para isso, vamos definir variáveis no início do nosso script. Assim, se precis
 
 
 
-```python
+```
 gDNA_ref = "/content/drive/MyDrive/Congen_ITV/reference/bWildVid.reduced.fasta"
 gDNA_fai = "/content/drive/MyDrive/Congen_ITV/reference/bWildVid.reduced.fasta.fai"
 map_bam = "/content/drive/MyDrive/Congen_ITV/bams/"
@@ -237,11 +237,11 @@ A linha de comando básica para essa etapa é:
 bcftools index variantes_norm.vcf.gz
 ```
 
-Vamos agora rodar todas essas etapas em um script bash.
+Vamos agora rodar todas essas etapas em um script .
 
 
-```python
-!conda run -n genomics_env bash -c \
+```
+!conda run -n genomics_env  -c \
 "bcftools mpileup -Ou -f {gDNA_ref} {map_bam} | \
 bcftools call -mv -Ob -o {bams_dir}bWildVid.reduced.raw.bcf && \
 bcftools norm -f {gDNA_ref} -Oz -o {bams_dir}bWildVid.reduced.variants.norm.vcf.gz {bams_dir}bWildVid.reduced.raw.bcf && \
@@ -276,6 +276,6 @@ Um arquivo VCF possui duas seções principais:
 **Vamos visualizar o arquivo.**
 
 
-```python
+```
 !zcat {bams_dir}bWildVid.reduced.filtered.vcf.gz | head -n 20
 ```
