@@ -10,7 +10,9 @@ pages:
     
   - title: Introdução à UNIX
     children:
-      - title: "- UNIX"
+      - title: "- Introdução ao UNIX"
+        url: /pages/tutorial_unix_2/
+      - title: "- Comandos básicos de UNIX"
         url: /pages/tutorial_unix_1/
       
   - title: Preparação de Dados
