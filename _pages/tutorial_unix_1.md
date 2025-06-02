@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "📘 Tutorial Básico de UNIX – Para Iniciantes"
+title: "📘 Comandos Básicos de UNIX – Para Iniciantes"
 permalink: /pages/tutorial_unix_1/
 ---
 
