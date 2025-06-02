@@ -1,0 +1,43 @@
+---
+---
+$global-font-family: Arial, sans-serif;   /* corpo e textos gerais */  
+$header-font-family: Arial, sans-serif;   /* headings e títulos */
+$text-color: #7d7e81;
+body {
+  font-size: 18px;
+}
+
+/* 1) Sass‑vars que já deram certo pra você */
+$max-width: 1440px;
+$right-sidebar-width: 300px;
+/* … */
+
+/* 2) importa o theme */
+@import "minimal-mistakes";
+
+.page {
+  padding-right: 0 !important;
+}
+
+
+.masthead .site-logo img {
+  width: auto;    /* defina a largura desejada em pixels */
+  height: auto;    /* mantém a proporção original */
+}
+
+.sidebar .nav__sub-title {
+  color: #66932e !important;  /* ajusta para a cor desejada */ 
+}
+
+.sidebar .nav__list a {
+  color: #7d7e81 !important;  /* ajusta para a cor que quiser */ 
+}
+
+.masthead .masthead__menu .site-title {
+  display: inline-block;
+  padding-right: 160px;         /* ajuste para a largura do seu fundo */
+  margin-left: 266px !important;
+  color: #66932e !important;
+  font-size: 25px;
+}
+

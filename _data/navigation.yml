@@ -1,0 +1,46 @@
+main:
+  - title: "Home"
+    url: /
+  - title: "Sobre"
+    url: /pages/team/
+  
+
+        
+pages:
+  - title: "GitPod"
+    children: 
+      - title: "- Como usar o GitPod"
+        url: /pages/logar_servidor/
+      - title: "- Configurando o ambiente"
+        url: /pages/config_ambiente/
+    
+  - title: Introdução à UNIX
+    children:
+      - title: "- UNIX"
+        url: /pages/tutorial_unix_1/
+      
+  - title: Preparação de Dados
+    children:
+      - title: "- Formatos de Arquivos de Sequenciamento: FASTQ e BAM"
+        url: /pages/preparacao/
+
+
+  - title: Processamento e Filtragem de Variantes
+    children:
+      - title: "- Mapeamento de genomas"
+        url: /pages/mapeamento/
+      - title: "- SNP Calling e Filtragem de SNPs"
+        url: /pages/SNP_calling/
+
+
+  - title: Análises de Diversidade e Estrutura Populacional
+    children:
+      - title: "- Estatísticas Sumárias de Diversidade (Heterozigosidade, π, dXY, Parentesco e Endogamia)"
+        url: /pages/estatisticas_diversidade/
+      - title: "- Análises de Estruturação: PCA e Admixture"
+        url: /pages/estruturacao/
+
+  - title: Análises demográficas
+    children:
+      - title: "- PMSC"
+        url: /pages/tutorial_PMSC/

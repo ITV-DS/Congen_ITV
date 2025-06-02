@@ -1,0 +1,687 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="pt-BR" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>📘 Tutorial Básico de UNIX – Para Iniciantes - Curso Prático de Genômica Populacional Aplicada à Conservação</title>
+<meta name="description" content="Curso de genômica populacional aplicada à conservação ofertado pelo GBB para servidores e bolsistas do ICMBio.">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Curso Prático de Genômica Populacional Aplicada à Conservação">
+<meta property="og:title" content="📘 Tutorial Básico de UNIX – Para Iniciantes">
+<meta property="og:url" content="http://localhost:4000/pages/tutorial_unix_1/">
+
+
+  <meta property="og:description" content="Curso de genômica populacional aplicada à conservação ofertado pelo GBB para servidores e bolsistas do ICMBio.">
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/pages/tutorial_unix_1/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript">
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  window.enable_copy_code_button = true;
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo_GBB.png" alt="Curso Prático de Genômica Populacional Aplicada à Conservação"></a>
+        
+        <a class="site-title" href="/">
+          Curso Prático de Genômica Populacional Aplicada à Conservação
+          <span class="site-subtitle">Versão 0.0.1</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/"
+                
+                
+              >Home</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/pages/team/"
+                
+                
+              >Sobre</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url"></a>
+    </h3>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      <nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      
+      
+        <li>
+          
+            <span class="nav__sub-title">GitPod</span>
+          
+
+          
+          <ul>
+            
+              <li><a href="/pages/logar_servidor/">- Como usar o GitPod</a></li>
+            
+              <li><a href="/pages/config_ambiente/">- Configurando o ambiente</a></li>
+            
+          </ul>
+          
+        </li>
+      
+        <li>
+          
+            <span class="nav__sub-title">Introdução à UNIX</span>
+          
+
+          
+          <ul>
+            
+              <li><a href="/pages/tutorial_unix_1/" class="active">- UNIX</a></li>
+            
+          </ul>
+          
+        </li>
+      
+        <li>
+          
+            <span class="nav__sub-title">Preparação de Dados</span>
+          
+
+          
+          <ul>
+            
+              <li><a href="/pages/preparacao/">- Formatos de Arquivos de Sequenciamento: FASTQ e BAM</a></li>
+            
+          </ul>
+          
+        </li>
+      
+        <li>
+          
+            <span class="nav__sub-title">Processamento e Filtragem de Variantes</span>
+          
+
+          
+          <ul>
+            
+              <li><a href="/pages/mapeamento/">- Mapeamento de genomas</a></li>
+            
+              <li><a href="/pages/SNP_calling/">- SNP Calling e Filtragem de SNPs</a></li>
+            
+          </ul>
+          
+        </li>
+      
+        <li>
+          
+            <span class="nav__sub-title">Análises de Diversidade e Estrutura Populacional</span>
+          
+
+          
+          <ul>
+            
+              <li><a href="/pages/estatisticas_diversidade/">- Estatísticas Sumárias de Diversidade (Heterozigosidade, π, dXY, Parentesco e Endogamia)</a></li>
+            
+              <li><a href="/pages/estruturacao/">- Análises de Estruturação: PCA e Admixture</a></li>
+            
+          </ul>
+          
+        </li>
+      
+        <li>
+          
+            <span class="nav__sub-title">Análises demográficas</span>
+          
+
+          
+          <ul>
+            
+              <li><a href="/pages/tutorial_PMSC/">- PMSC</a></li>
+            
+          </ul>
+          
+        </li>
+      
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="📘 Tutorial Básico de UNIX – Para Iniciantes">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://localhost:4000/pages/tutorial_unix_1/" itemprop="url">📘 Tutorial Básico de UNIX – Para Iniciantes
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>Este é um guia introdutório para quem está começando a usar o terminal em sistemas baseados em UNIX, como Linux e macOS. Aqui você vai aprender os comandos mais importantes para manipulação de arquivos e pastas, permissões e redirecionamentos.</p>
+
+<hr />
+
+<h2 id="-navegação-entre-diretórios">🧭 Navegação entre diretórios</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Comando</th>
+      <th>Descrição</th>
+      <th>Observações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">pwd</code></td>
+      <td>Mostra o caminho completo do diretório atual</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ls</code></td>
+      <td>Lista os arquivos e pastas do diretório atual</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ls -l</code></td>
+      <td>Lista com detalhes (permissões, dono, tamanho etc.)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ls -a</code></td>
+      <td>Lista todos os arquivos, inclusive os ocultos</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cd nome_da_pasta</code></td>
+      <td>Entra em uma pasta</td>
+      <td>Pode ser caminho relativo ou absoluto</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cd ..</code></td>
+      <td>Volta para o diretório anterior</td>
+      <td>Pode ser acumulativo. Ex: <code class="language-plaintext highlighter-rouge">cd ../../../</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cd /</code></td>
+      <td>Vai para o diretório raiz</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cd ~</code></td>
+      <td>Vai para a pasta pessoal do usuário</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="-manipulação-de-diretórios-pastas">📂 Manipulação de diretórios (pastas)</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Comando</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">mkdir nome_da_pasta</code></td>
+      <td>Cria uma nova pasta</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">rmdir nome_da_pasta</code></td>
+      <td>Remove uma pasta vazia</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">rm -r nome_da_pasta</code></td>
+      <td>Remove uma pasta e todo o seu conteúdo</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="-manipulação-de-arquivos">📄 Manipulação de arquivos</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Comando</th>
+      <th>Descrição</th>
+      <th>Observações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">touch nome_do_arquivo</code></td>
+      <td>Cria um arquivo vazio</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">nano nome_do_arquivo</code></td>
+      <td>Abre o editor de texto <code class="language-plaintext highlighter-rouge">nano</code> para editar o arquivo</td>
+      <td>Para salvar: <code class="language-plaintext highlighter-rouge">Ctrl + O</code>, sair: <code class="language-plaintext highlighter-rouge">Ctrl + X</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cat nome_do_arquivo</code></td>
+      <td>Mostra o conteúdo do arquivo</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cp origem destino</code></td>
+      <td>Copia um arquivo ou pasta</td>
+      <td>Para copiar pastas, use <code class="language-plaintext highlighter-rouge">-r</code>: <code class="language-plaintext highlighter-rouge">cp -r pasta1 pasta2</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">mv origem destino</code></td>
+      <td>Move ou renomeia um arquivo ou pasta</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">rm nome_do_arquivo</code></td>
+      <td>Apaga um arquivo</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="-visualização-de-conteúdo">🔍 Visualização de conteúdo</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Comando</th>
+      <th>Descrição</th>
+      <th>Observações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cat arquivo</code></td>
+      <td>Mostra o conteúdo de um arquivo</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">less arquivo</code></td>
+      <td>Mostra o conteúdo paginado</td>
+      <td>Use <code class="language-plaintext highlighter-rouge">q</code> para sair</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">head arquivo</code></td>
+      <td>Mostra as primeiras linhas de um arquivo</td>
+      <td>Pode usar <code class="language-plaintext highlighter-rouge">-n</code>: <code class="language-plaintext highlighter-rouge">head -10 arquivo</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">tail arquivo</code></td>
+      <td>Mostra as últimas linhas de um arquivo</td>
+      <td>Pode usar <code class="language-plaintext highlighter-rouge">-n</code>: <code class="language-plaintext highlighter-rouge">tail -10 arquivo</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">tail -f arquivo</code></td>
+      <td>Mostra as últimas linhas com atualização em tempo real</td>
+      <td>Útil para logs em tempo real</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="-permissões-de-arquivos-e-pastas">🔐 Permissões de arquivos e pastas</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Comando</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ls -l</code></td>
+      <td>Mostra as permissões dos arquivos</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">chmod</code></td>
+      <td>Altera as permissões de arquivos ou pastas</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">chown</code></td>
+      <td>Altera o dono de arquivos ou pastas</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="-exemplos-úteis">📌 Exemplos úteis:</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">chmod +x script.sh</code> — Dá permissão de execução</li>
+  <li><code class="language-plaintext highlighter-rouge">chmod 644 arquivo.txt</code> — Permissões comuns para arquivos de texto</li>
+  <li><code class="language-plaintext highlighter-rouge">chown usuario:grupo arquivo.txt</code> — Altera proprietário e grupo</li>
+</ul>
+
+<hr />
+
+<h2 id="️-redirecionamentos-e-pipes">➡️ Redirecionamentos e Pipes</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Símbolo</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&gt;</code></td>
+      <td>Redireciona saída para sobrescrever um arquivo</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&gt;&gt;</code></td>
+      <td>Redireciona saída e adiciona ao final do arquivo</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;</code></td>
+      <td>Lê entrada a partir de um arquivo</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">|</code></td>
+      <td>Conecta a saída de um comando na entrada de outro (pipe)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="-exemplos">📌 Exemplos:</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">echo "Olá" &gt; teste.txt</code> — Cria ou sobrescreve o conteúdo</li>
+  <li><code class="language-plaintext highlighter-rouge">echo "Mais uma linha" &gt;&gt; teste.txt</code> — Adiciona sem apagar</li>
+  <li><code class="language-plaintext highlighter-rouge">cat teste.txt | grep "linha"</code> — Filtra linhas que contêm “linha”</li>
+</ul>
+
+<hr />
+
+<h2 id="-comandos-úteis">🧰 Comandos úteis</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Comando</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">clear</code></td>
+      <td>Limpa a tela do terminal</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">history</code></td>
+      <td>Mostra os comandos digitados anteriormente</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">man comando</code></td>
+      <td>Mostra o manual de um comando (ex: <code class="language-plaintext highlighter-rouge">man ls</code>)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">which comando</code></td>
+      <td>Mostra o caminho do comando executável (ex: <code class="language-plaintext highlighter-rouge">which python</code>)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">exit</code></td>
+      <td>Sai do terminal</td>
+    </tr>
+  </tbody>
+</table>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="footer__right-logo" style="display: flex; justify-content: space-between; align-items: center;">
+  <p style="font-size: 12px; margin: 0;">© 2025 Sibelle Vilaça, Henrique Figueiró & Camila Nacif. Powered by Jekyll & Minimal Mistakes.</p>
+  <img src="/assets/images/logo_ITV_ICMBIO.png" alt="Logo" style="height: 75px; margin-left: 3px;">
+</div>
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
