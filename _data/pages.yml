@@ -1,11 +1,4 @@
 pages:
-  - title: "GitPod"
-    children: 
-      - title: "- Como usar o GitPod"
-        url: /pages/logar_servidor/
-      - title: "- Configurando o ambiente"
-        url: /pages/config_ambiente/
-
   - title: Introdução à UNIX
     children:
       - title: "- UNIX"
